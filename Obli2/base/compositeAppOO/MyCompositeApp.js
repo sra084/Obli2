@@ -2,6 +2,8 @@ import {BaseApp} from '../../base/BaseApp.js';
 import {CompositeFigure} from './CompositeFigure.js';
 import {XZPlane} from "../../base/shapes/XZPlane.js";
 
+
+
 /**
  * Klassen representerer en WebGL-app som tegner en sammensatt fiigur.
  */

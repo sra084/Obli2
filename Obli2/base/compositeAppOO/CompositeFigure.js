@@ -4,7 +4,7 @@
 */
 import {Stack} from '../../base/helpers/Stack.js';
 import {Cube} from '../../base/shapes/Cube.js';
-import {Cone} from '../../base/shapes/Cone.js';
+import {Cylinder} from '../../base/shapes/Cylinder.js';
 
 /**
  * Klasse som implementerer en sammensatt figur.
@@ -16,10 +16,10 @@ export class CompositeFigure {
 
         this.stack = new Stack();
 
-        this.cube = new Cube(app);
+        this.cube = new Cylinder(app);
         this.cube.initBuffers();
 
-        this.cone = new Cube(app);
+        this.cone = new Cylinder(app);
         //this.cone = new Cylinder(app);
         this.cone.initBuffers();
 
