@@ -3,7 +3,7 @@
     buffer og draw for PaperMan
 */
 import {Stack} from '../../base/helpers/Stack.js';
-import {Cube} from '../../base/shapes/Cube.js';
+
 import {Cylinder} from '../../base/shapes/Cylinder.js';
 
 /**
@@ -16,8 +16,8 @@ export class CompositeFigure {
 
         this.stack = new Stack();
 
-        this.cube = new Cylinder(app);
-        this.cube.initBuffers();
+        this.cylinder = new Cylinder(app);
+        this.cylinder.initBuffers();
 
         this.cone = new Cylinder(app);
         //this.cone = new Cylinder(app);
@@ -52,13 +52,16 @@ export class CompositeFigure {
         modelMatrix = this.stack.peekMatrix();
         modelMatrix.translate(0,2,0);
         modelMatrix.scale(2,1,2);
-        this.cone.draw(shaderInfo, elapsed, modelMatrix);
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix);
+
+
+
 
         modelMatrix = this.stack.peekMatrix();
-        modelMatrix.translate(0,1,0);
-        modelMatrix.scale(2,1,2);
-        this.cube.draw(shaderInfo, elapsed, modelMatrix);
+        modelMatrix.translate(-1, 2, -1)
 
+        modelMatrix.scale(0.1, 0.5, 0.1)
+        this.cube.draw(shaderInfo, elapsed, modelMatrix)
         //Tømmer stacken ...:
         this.stack.empty();
     }
