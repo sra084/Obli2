@@ -5,6 +5,7 @@
 import {Stack} from '../../base/helpers/Stack.js';
 
 import {Cylinder} from '../../base/shapes/Cylinder.js';
+import {Sphere} from '../shapes/Sphere.js';
 
 /**
  * Klasse som implementerer en sammensatt figur.
@@ -19,9 +20,8 @@ export class CompositeFigure {
         this.cylinder = new Cylinder(app);
         this.cylinder.initBuffers();
 
-        this.cone = new Cylinder(app);
-        //this.cone = new Cylinder(app);
-        this.cone.initBuffers();
+        this.sphere = new Sphere(app);
+        this.sphere.initBuffers();
 
         this.translationX = 0;
     }
@@ -49,19 +49,169 @@ export class CompositeFigure {
         //modelMatrix.scale(4.2,0.4,1.8);       EKSEMPEL
 
         // Tegner diverse:
-        modelMatrix = this.stack.peekMatrix();
-        modelMatrix.translate(0,2,0);
-        modelMatrix.scale(2,1,2);
-        this.cylinder.draw(shaderInfo, elapsed, modelMatrix);
 
 
 
 
         modelMatrix = this.stack.peekMatrix();
-        modelMatrix.translate(-1, 2, -1)
+        modelMatrix.translate(1, 1, 1)
+        modelMatrix.scale(0.1, 0.6, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
 
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 1, -1)
+        modelMatrix.rotate(40, 11, 1, 1)
+        modelMatrix.scale(0.1, 0.75, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 3.3, -1)
+        modelMatrix.rotate(90, 11, 1, 1)
         modelMatrix.scale(0.1, 0.5, 0.1)
-        this.cube.draw(shaderInfo, elapsed, modelMatrix)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(-1, 3.3, 1)
+        modelMatrix.scale(0.2, 0.2, 0.2);
+        this.sphere.draw(shaderInfo, elapsed, modelMatrix);
+
+
+
+        //Stag 2
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(-1, 1, 1)
+        modelMatrix.scale(0.1, 0.6, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 1, 1)
+        modelMatrix.rotate(40, 1, 1, 20)
+        modelMatrix.scale(0.1, 0.75, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(-1, 3.3, -1)
+        modelMatrix.rotate(90, 11, 1, 1)
+        modelMatrix.scale(0.1, 0.5, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 3.3, 1)
+        modelMatrix.scale(0.2, 0.2, 0.2);
+        this.sphere.draw(shaderInfo, elapsed, modelMatrix);
+
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 3, 1)
+        modelMatrix.scale(0.1, 0.6, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 3, -1)
+        modelMatrix.rotate(40, 11, 1, 1)
+        modelMatrix.scale(0.1, 0.75, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+//kule
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(-1, 3.3, 1)
+        modelMatrix.scale(0.1, 0.6, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 3.3, 1)
+        modelMatrix.rotate(40, 1, 1, 20)
+        modelMatrix.scale(0.1, 0.75, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(-1, 5.5, -1)
+        modelMatrix.rotate(90, 11, 1, 1)
+        modelMatrix.scale(0.1, 0.5, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 5.5, 1)
+        modelMatrix.scale(0.1, 0.6, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 5.5, -1)
+        modelMatrix.rotate(40, 11, 1, 1)
+        modelMatrix.scale(0.1, 0.75, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+//kule
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(-1, 5.5, 1)
+        modelMatrix.scale(0.1, 0.6, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(1, 5.5, 1)
+        modelMatrix.rotate(40, 1, 1, 20)
+        modelMatrix.scale(0.1, 0.75, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+        modelMatrix = this.stack.peekMatrix();
+        modelMatrix.translate(-1, 5.5, -1)
+        modelMatrix.rotate(90, 11, 1, 1)
+        modelMatrix.scale(0.1, 0.5, 0.1)
+        this.cylinder.draw(shaderInfo, elapsed, modelMatrix)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //Tømmer stacken ...:
         this.stack.empty();
     }
